@@ -1,0 +1,6 @@
+shallow_clone: true
+configuration: Release
+platform: Any CPU
+build:
+    parallel: true
+    project: AppVeyorSample.sln
