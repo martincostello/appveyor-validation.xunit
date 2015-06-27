@@ -6,13 +6,8 @@ environment:
     DNX_FEED: https://www.nuget.org/api/v2
 install:
     - ps: Invoke-WebRequest https://api.nuget.org/downloads/nuget.exe -OutFile nuget.exe
+build_script:
     - nuget restore AppVeyorSample.sln
-    - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
     - dnvm install 1.0.0-beta4
-    - dnvm use 1.0.0-beta4
     - dnu restore
-before_build:
-    - dnvm use 1.0.0-beta4
-build:
-    parallel: true
-    project: AppVeyorSample.sln
+    - "C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild" AppVeyorSample.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
