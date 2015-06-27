@@ -12,3 +12,4 @@ build_script:
     - dnu restore
     - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
     - msbuild AppVeyorSample.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+test: off
