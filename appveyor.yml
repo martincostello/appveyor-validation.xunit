@@ -11,6 +11,8 @@ install:
     - dnvm install 1.0.0-beta4
     - dnvm use 1.0.0-beta4
     - dnu restore
+before_build:
+    - dnvm use 1.0.0-beta4
 build:
     parallel: true
     project: AppVeyorSample.sln
