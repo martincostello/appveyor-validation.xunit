@@ -1,6 +1,16 @@
+os: Visual Studio 2015 RC
 shallow_clone: true
 configuration: Release
 platform: Any CPU
+environment:
+    DNX_FEED: https://www.nuget.org/api/v2
+install:
+    - ps: Invoke-WebRequest https://api.nuget.org/downloads/nuget.exe -OutFile nuget.exe
+    - nuget restore AppVeyorSample.sln
+    - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+    - dnvm install 1.0.0-beta4
+    - dnvm use 1.0.0-beta4
+    - dnu restore
 build:
     parallel: true
     project: AppVeyorSample.sln
