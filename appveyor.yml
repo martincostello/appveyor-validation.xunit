@@ -10,4 +10,5 @@ build_script:
     - nuget restore AppVeyorSample.sln
     - dnvm install 1.0.0-beta4
     - dnu restore
-    - "C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild" AppVeyorSample.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+    - msbuild AppVeyorSample.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
