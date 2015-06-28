@@ -12,7 +12,5 @@ build_script:
     - dnu restore
     - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
     - msbuild AppVeyorSample.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-    - packages\xunit.runner.console\tools\xunit.console ConsoleRunner\bin\Debug\ConsoleRunner.dll
-    - msbuild Tests.proj /nologo /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-    - dnx DNXRunner test
+    - RunAllTests
 test: off
