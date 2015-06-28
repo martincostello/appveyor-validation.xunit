@@ -6,8 +6,8 @@ install:
     - ps: Invoke-WebRequest https://api.nuget.org/downloads/nuget.exe -OutFile nuget.exe
 build_script:
     - nuget restore AppVeyorSample.sln
-    - nuget install xunit.runner.console -ExcludeVersion -Version 2.1.0-beta2-build2981 -OutputDirectory packages
-    - nuget install xunit.runner.msbuild -ExcludeVersion -Version 2.1.0-beta2-build2981 -OutputDirectory packages
+    - nuget install xunit.runner.console -ExcludeVersion -Version 2.1.0-beta3-build3019 -OutputDirectory packages
+    - nuget install xunit.runner.msbuild -ExcludeVersion -Version 2.1.0-beta3-build3019 -OutputDirectory packages
     - dnvm install 1.0.0-beta4
     - dnu restore
     - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
