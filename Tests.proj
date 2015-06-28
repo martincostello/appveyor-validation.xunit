@@ -1,0 +1,8 @@
+<Project DefaultTargets="Test" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+    <UsingTask
+        AssemblyFile="packages\xunit.runner.msbuild\build\portable-net45+win+wpa81+wp80+monotouch+monoandroid+Xamarin.iOS\xunit.runner.msbuild.dll"
+        TaskName="Xunit.Runner.MSBuild.xunit"/>
+    <Target Name="Test">
+        <xunit Assemblies="MSBuildRunner\bin\Debug\MSBuildRunner.dll"/>
+    </Target>
+</Project>

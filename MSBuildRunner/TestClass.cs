@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace ConsoleRunner
+namespace MSBuildRunner
 {
     public class TestClass
     {

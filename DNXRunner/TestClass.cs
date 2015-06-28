@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace ConsoleRunner
+namespace DNXRunner
 {
     public class TestClass
     {
