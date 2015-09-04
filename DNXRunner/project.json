@@ -6,8 +6,8 @@
     "projectUrl": "",
     "licenseUrl": "",
     "dependencies": {
-        "xunit": "2.1.0-beta3-build3025",
-        "xunit.runner.dnx": "2.1.0-beta3-build95"
+        "xunit": "2.1.0-rc1-build3149",
+        "xunit.runner.dnx": "2.1.0-beta5-build162"
     },
     "frameworks": {
         "dnx451": { }
