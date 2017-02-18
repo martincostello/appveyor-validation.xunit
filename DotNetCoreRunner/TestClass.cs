@@ -1,6 +1,7 @@
-﻿using Xunit;
+using System.Threading.Tasks;
+using Xunit;
 
-namespace DNXRunner
+namespace DotNetCoreRunner
 {
     public class TestClass
     {
@@ -8,8 +9,9 @@ namespace DNXRunner
         public void Passing() { }
 
         [Fact]
-        public void Failing()
+        public async void Failing()
         {
+            await Task.Delay(0);
             Assert.True(false);
         }
 

@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Threading.Tasks;
+using Xunit;
 
 namespace ConsoleRunner
 {
@@ -8,8 +9,9 @@ namespace ConsoleRunner
         public void Passing() { }
 
         [Fact]
-        public void Failing()
+        public async void Failing()
         {
+            await Task.Delay(0);
             Assert.True(false);
         }
 

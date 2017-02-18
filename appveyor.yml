@@ -1,14 +1,12 @@
-os: Visual Studio 2015
+image: Visual Studio 2017 RC
 shallow_clone: true
 install:
-    - ps: Invoke-WebRequest https://api.nuget.org/downloads/nuget.exe -OutFile nuget.exe
+    - ps: Invoke-WebRequest https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -OutFile nuget.exe
 build_script:
     - nuget restore AppVeyorSample.sln
+    - dotnet restore AppVeyorSample.sln
     - nuget install xunit.runner.console -ExcludeVersion -Pre -OutputDirectory packages
     - nuget install xunit.runner.msbuild -ExcludeVersion -Pre -OutputDirectory packages
-    - dnvm install 1.0.0-beta7
-    - dnu restore
-    - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
     - msbuild AppVeyorSample.sln /m:4 /nologo /v:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
     - RunAllTests
 test: off
