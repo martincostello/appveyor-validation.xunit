@@ -17,5 +17,15 @@ namespace DotNetCoreRunner
 
         [Fact(Skip = "Don't run me!")]
         public void Skipped() { }
+
+        [Theory]
+        [InlineData("a", "b")]
+        [InlineData("c", "d")]
+        public void PassingTheory(string x, string y) { }
+
+        [Theory]
+        [InlineData("e", "f", Skip = "Don't run me!")]
+        [InlineData("g", "h", Skip = "Don't run me!")]
+        public void SkippedTheory(string x, string y) { }
     }
 }
